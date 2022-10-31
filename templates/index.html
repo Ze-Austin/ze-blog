@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+{% if current_user.is_authenticated %}
+<h1>Hello, {{current_user.username}}! Welcome to Ze Blog! <span class="wave">👋🏾</span></h1>
+{% else %}
+<h1>Welcome to Ze Blog! <span class="wave">👋🏾</span></h1>
+{% endif %}
+{% if articles %}
+<div class="table_wrapper">
+  <table>
+    <thead>
+      <th>Article</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      {% for article in articles %}
+      {% if current_user.id == article.user_id %}
+      <tr>
+        <td><a href="/article/{{article.id}}/">{{article.title}}</a></td>
+        <td>{{article.author}}</td>
+        <td>{{article.created_on.strftime('%d/%b/%Y')}}</td>
+        <td>
+          <a href="/edit/{{article.id}}/">Edit</a>
+          <a href="/delete/{{article.id}}/">Delete</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td><a href="/article/{{article.id}}/">{{article.title}}</a></td>
+        <td>{{article.author}}</td>
+        <td>{{article.created_on.strftime('%d/%b/%Y')}}</td>
+        <td>
+          <a href="/article/{{article.id}}/">View</a>
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<br>
+{% if current_user.is_authenticated %}
+<p><a href="{{url_for('contribute')}}" class="button">Contribute</a></p>
+{% else %}
+<p>Fancy sharing your thoughts with Ze Blog? <a href="{{url_for('login')}}">Log In</a> to join us 🤗</p>
+{% endif %}
+{% else %}
+<p>
+  No articles have been uploaded yet.
+  {% if current_user.is_authenticated %}
+  <a href="{{url_for('contribute')}}">Create One</a>?
+  {% else %}
+  <a href="{{url_for('login')}}">Log In</a> to create one?
+  {% endif %}
+</p>
+{% endif %} {% endblock content %}

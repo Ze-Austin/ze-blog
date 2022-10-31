@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+<form action="{{url_for('contact')}}" method="POST">
+  <div class="form-group">
+    <h3>Your Feedback is Appreciated</h3>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      placeholder="Your Name Here"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      placeholder="Your Email Address"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      placeholder="What's Your Message About?"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea
+      name="message"
+      cols="30"
+      rows="10"
+      class="form-control"
+      placeholder="Your Message Here"
+      required
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="priority">Priority</label>
+    <select name="priority" class="form-control">
+      <option value="low">Low</option>
+      <option value="normal" selected>Normal</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Send" class="button" />
+  </div>
+</form>
+<br />
+<p>
+  Alternatively, you can reach Ze Austin on
+  <a href="https://github.com/Ze-Austin">GitHub</a>,
+  <a href="https://twitter.com/ze_austin">Twitter</a> or via email:
+  austinwopara@gmail.com.
+</p>
+{% endblock content %}

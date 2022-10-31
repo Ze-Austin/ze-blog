@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename= 'css/main.css')}}"
+    />
+    <title>Ze Blog</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="{{url_for('index')}}"><h2>Ze Blog</h2></a>
+      </div>
+      <div class="nav-item">
+        {% if current_user.is_authenticated %}
+        <a href="{{url_for('index')}}">Home</a>
+        <a href="{{url_for('about')}}">About</a>
+        <a href="{{url_for('contribute')}}">Contribute</a>
+        <a href="{{url_for('contact')}}">Contact</a>
+        <a href="{{url_for('logout')}}">Log Out</a>
+        {% else %}
+        <a href="{{url_for('index')}}">Home</a>
+        <a href="{{url_for('about')}}">About</a>
+        <a href="{{url_for('contact')}}">Contact</a>
+        <a href="{{url_for('register')}}">Sign Up</a>
+        <a href="{{url_for('login')}}">Log In</a>
+        {% endif %}
+      </div>
+    </header>
+    <main class="container">{% block content %}{% endblock content %}</main>
+    <footer>
+      <p class="footer">
+        <a href="https://twitter.com/Ze_Austin" class="twitter" target="_blank"
+          >@Ze_Austin</a
+        >,
+        <a href="https://altschoolafrica.com/schools/engineering"
+          >AltSchool Africa</a
+        >
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+    </footer>
+  </body>
+</html>

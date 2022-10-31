@@ -16,7 +16,7 @@ The Blog should have a Home Page, About Page, Contact Page, the Blog application
 
 ### MILESTONES
 1. There should be a variety of users who can access the program and contribute content to the blogging platform.
-2. Every user needs to have a first name, last name, email, and (you can add other attributes you want to store about the user)
+2. Every user needs to have a first name, last name and email; you can then add other attributes you want to store about the user.
 3. The blog app should allow users to register and log in.
 4. The homepage of the app should provide a list of blogs produced by various users.
 5. Each blog should show the user that created it and the time the blog was created.

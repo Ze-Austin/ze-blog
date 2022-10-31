@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<h1>{{article.title}}</h1>
+<h3>By {{article.author}}</h3>
+<p class="article-control"><pre>{{article.content}}</pre></p>
+<h4>{{article.created_on.strftime('%d/%b/%Y')}}</h4>
+{% if current_user.id == article.user_id %}
+<a class="button" href="/edit/{{article.id}}/">Update</a> 
+<a class="button" href="/delete/{{article.id}}/">Delete</a>
+<br />
+{% endif %} {% endblock content %}
