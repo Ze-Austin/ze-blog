@@ -1,10 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <h2>Hello and Welcome! <span class="wave">👋🏾</span></h2>
 <p>
-  Ze Blog is a safe space to explore the thoughts and experiences of fellow citizens of the internet, and share yours too.
+  Ze Blog is a safe space to explore the thoughts and experiences of fellow
+  citizens of the internet, and share yours too.
 </p>
 <p>
-  Authentication is not required to read articles on this blog, but you'll have to <a href="{{url_for('login')}}">log in</a> to post, edit or delete your articles.
+  Authentication is not required to read articles on this blog, but you'll have
+  to <a href="{{url_for('login')}}">log in</a> to post, edit or delete your
+  articles.
 </p>
 <br />
 <div>
@@ -25,7 +28,8 @@
   <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a>
   who's learning to create magic with the Python Flask framework. Learn more
   about Ze Austin on <a href="https://github.com/Ze-Austin">GitHub</a> and
-  <a href="https://twitter.com/ze_austin">Twitter</a>
+  <a href="https://twitter.com/ze_austin">Twitter</a>, or send a message
+  <a href="{{url_for('contact')}}">here</a>.
 </p>
 <br />
 {% endblock content %}
