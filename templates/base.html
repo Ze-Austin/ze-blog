@@ -13,7 +13,14 @@
   <body>
     <header>
       <div class="logo">
-        <a href="{{url_for('index')}}"><h2>Ze Blog</h2></a>
+        <a href="{{url_for('index')}}">
+          <img
+            src="{{url_for('static',filename= 'Ze_Blog_Logo/site.png')}}"
+            alt="Logo"
+            width="120"
+            height="40"
+          />
+        </a>
       </div>
       <div class="nav-item">
         {% if current_user.is_authenticated %}
@@ -39,7 +46,17 @@
     </div>
     {% endif %} {% endwith %}
     <main class="container">{% block content %}{% endblock content %}</main>
-    <footer>
+    <footer class="container">
+      <div class="container">
+          <a href="{{url_for('index')}}">
+            <img
+              src="{{url_for('static',filename= 'Ze_Blog_Logo/inverted.png')}}"
+              alt="Logo"
+              width="100%"
+              height="33%"
+            />
+          </a>
+      </div>
       <p class="footer">
         <a href="https://twitter.com/Ze_Austin" class="twitter" target="_blank"
           >@Ze_Austin</a

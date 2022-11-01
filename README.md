@@ -1,43 +1,189 @@
-# AltSchool of Engineering
+<!-- Back to Top Navigation Anchor -->
+<a name="readme-top"></a>
 
-# Backend Second Semester Examination Project
 
-## BLOG APPLICATION
+<!-- Project Shields -->
+<div align="center">
 
-### OVERVIEW
-You need to create a blogging app. The fundamental concept is that anyone visiting the website should be able to read a blog post written by them or another user because the app has a landing page that lists a variety of articles written by different authors.
+  [![Contributors][contributors-shield]][contributors-url]
+  [![Forks][forks-shield]][forks-url]
+  [![Stargazers][stars-shield]][stars-url]
+  [![Issues][issues-shield]][issues-url]
+  [![MIT License][license-shield]][license-url]
+  [![Twitter][twitter-shield]][twitter-url]
+</div>
 
-### GOALS
-1. Learn how to use python for backend development
-2. Work with user authentication and authorization
 
-### SPECIFICATIONS
-The Blog should have a Home Page, About Page, Contact Page, the Blog application should have a user authentication where a user can create an account and login so that they  could be able to create a blog, also the Blog should have the logout ability.
+<!-- Project Logo -->
+<br />
+<div align="center">
+  <a href="https://github.com/Ze-Austin/ze-blog">
+    <img src="static/Ze_Blog_logo/site.png" alt="Logo" width="600" height="200">
+  </a>
 
-### MILESTONES
-1. There should be a variety of users who can access the program and contribute content to the blogging platform.
-2. Every user needs to have a first name, last name and email; you can then add other attributes you want to store about the user.
-3. The blog app should allow users to register and log in.
-4. The homepage of the app should provide a list of blogs produced by various users.
-5. Each blog should show the user that created it and the time the blog was created.
-6. Signed in and non signed in users should be able to visit this page
-7. If a user is signed in and visits an article they created, they should see an edit button to edit either the title or the body of the article.
-8. Clicking on the edit button on an article should take the user to the edit page.
-9. Only users who are signed in should be able to see the button to create an article on the app's homepage page. The user should be directed to the create page after clicking the button.
-10. Your database should contain User information and should be able to store every information about the User there.
-11. Try to be creative as we will be paying attention to the details.
+  <br />
 
-### DATA MODELS
-User Model
-- Id
-- Email
-- Name
-You can add different models that suit your blog like Article etc. Be creative.
+  <p align="center">
+    <a href="https://github.com/Ze-Austin/ze-blog#readme"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Ze-Austin/ze-blog/blob/main/static/screenshot.png">View Demo</a>
+    ·
+    <a href="https://github.com/Ze-Austin/ze-blog/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Ze-Austin/ze-blog/issues">Request Feature</a>
+  </p>
+</div>
+<br />
 
-### SUBMISSION
+---
 
-- Your code should be well documented with a requirement.txt file that contains all your libraries used for the project.
-- Push your code to Github
-- Share your GitHub link
+<!-- TABLE OF CONTENTS -->
+<br />
 
-BEST OF LUCK!
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-ze-blog">About Ze Blog</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#lessons-learned">Lessons Learned</a>
+    </li>
+    <li><a href="#sample">Sample</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+</details>
+<br />
+
+---
+
+<!-- About the Blog -->
+<br />
+
+## About Ze Blog
+
+Ze Blog is a safe space for you to explore the thoughts and experiences of fellow citizens of the internet, and share yours too.
+
+Authentication is not required to read articles on this blog, but you'll have log in to post, edit or delete your articles.
+
+Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austin">Ze Austin</a>, a Backend Engineering student at <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a> who's learning to create magic with the Python Flask framework. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With:
+
+![Python][python]
+![Flask][flask]
+![Jinja][jinja]
+![HTML5][html5]
+![CSS3][css3]
+![SQLite][sqlite]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+<!-- Lessons from the Project -->
+<br />
+
+## Lessons Learned
+
+Creating this blog helped me learn and practice:
+* Web Design
+* Debugging
+* Routing
+* Database Management
+* Internet Security
+* User Authentication
+* User Authorization
+* Flash Messaging
+* Documentation
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- Sample Screenshot -->
+<br />
+
+## Sample
+
+<br />
+
+[![Ze Blog Screenshot][ze-blog-screenshot]](https://github.com/Ze-Austin/ze-blog/blob/main/static/screenshot.png)
+
+<br/>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- License -->
+<br />
+
+## License
+
+Distributed under the MIT License. See <a href="https://github.com/Ze-Austin/ze-blog/blob/main/LICENSE">LICENSE</a> for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- Contact -->
+<br />
+
+## Contact
+
+Dr Austin Wopara - [@Ze_Austin](https://twitter.com/Ze_Austin) - austinwopara@gmail.com
+
+Project Link: [Ze Blog](https://github.com/Ze-Austin/ze-blog)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- Acknowledgements -->
+<br />
+
+## Acknowledgements
+
+This project was made possible by:
+
+* [AltSchool Africa](https://altschoolafrica.com/schools/engineering)
+* [Caleb Emelike](https://github.com/CalebEmelike)
+* [AltSchool Python Repo](https://github.com/Ze-Austin/altschool-python)
+* [GitHub Student Pack](https://education.github.com/globalcampus/student)
+* [NameCheap Logo Maker](https://www.namecheap.com/logo-maker/)
+* [README Template](https://github.com/othneildrew/Best-README-Template)
+* [Stack Overflow](https://stackoverflow.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- Markdown Links & Images -->
+[contributors-shield]: https://img.shields.io/github/contributors/Ze-Austin/ze-blog.svg?style=for-the-badge
+[contributors-url]: https://github.com/Ze-Austin/ze-blog/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Ze-Austin/ze-blog.svg?style=for-the-badge
+[forks-url]: https://github.com/Ze-Austin/ze-blog/network/members
+[stars-shield]: https://img.shields.io/github/stars/Ze-Austin/ze-blog.svg?style=for-the-badge
+[stars-url]: https://github.com/Ze-Austin/ze-blog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Ze-Austin/ze-blog.svg?style=for-the-badge
+[issues-url]: https://github.com/Ze-Austin/ze-blogissues
+[license-shield]: https://img.shields.io/github/license/Ze-Austin/ze-blog.svg?style=for-the-badge
+[license-url]: https://github.com/Ze-Austin/ze-blog/blob/main/LICENSE.txt
+[twitter-shield]: https://img.shields.io/badge/-@ze_austin-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/ze_austin
+[twitter-url]: https://twitter.com/ze_austin
+[ze-blog-screenshot]: static/screenshot.png
+[python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[flask]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
+[jinja]: https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black
+[html5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[css3]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[sqlite]: https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white

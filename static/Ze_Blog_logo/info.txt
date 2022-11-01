@@ -1,11 +1,18 @@
 
 Hope you enjoy your new logo, here are the people that
 made your beautiful logo happen :)
-font name: Merienda-Regular
-font link: https://fonts.google.com/specimen/Merienda
-font author: Eduardo Tunni
-font author site: http://www.tipo.net.ar/
+font name: DancingScript-Regular
+font link: https://fonts.google.com/specimen/Dancing+Script
+font author: Impallari Type
+font author site: www.impallari.com
+Slogan Font: KaushanScript-Regular.ttf
 
+icon designer: Abraham Barrera
+icon designer link: /abebarrera
+        
 
-{"bg":"#ECE0E8","icon-gradient-0":"#1E0B36","icon-gradient-1":"#CA3782","font":"#230A1B","slogan":"#371e2f"}
+fontColor: {"hex":"#fffaf0"}
+bgColor: {"hex":"#8b008b"}
+iconColor: {"hex":"#fffaf0"}
+sloganColor: {"hex":"#fffaf0"}
       

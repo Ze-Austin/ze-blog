@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
+{% if current_user.is_authenticated %}
+<h2>Hello, {{ current_user.username }}! <span class="wave">👋🏾</span></h2>
+{% else %}
 <h2>Hello and Welcome! <span class="wave">👋🏾</span></h2>
+{% endif %}
 <p>
   Ze Blog is a safe space to explore the thoughts and experiences of fellow
   citizens of the internet, and share yours too.
@@ -11,7 +15,7 @@
 </p>
 <br />
 <div>
-  <a href="{{url_for('static', filename='Ze_Austin.jpg')}}">
+  <a href="{{url_for('contact')}}">
     <img
       src="{{url_for('static', filename='Ze_Austin.jpg')}}"
       class="profile_pic"
