@@ -31,6 +31,13 @@
         {% endif %}
       </div>
     </header>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="container">
+      {% for message in messages %}
+      <p>{{ message }} <a href="{{request.path}}">Dismiss</a></p>
+      {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
     <main class="container">{% block content %}{% endblock content %}</main>
     <footer>
       <p class="footer">
