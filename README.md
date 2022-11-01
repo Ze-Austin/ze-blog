@@ -34,13 +34,10 @@
     <a href="https://github.com/Ze-Austin/ze-blog/issues">Request Feature</a>
   </p>
 </div>
-<br />
 
 ---
 
-<!-- TABLE OF CONTENTS -->
-<br />
-
+<!-- Table of Contents -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -60,13 +57,10 @@
   </ol>
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 </details>
-<br />
 
 ---
 
 <!-- About the Blog -->
-<br />
-
 ## About Ze Blog
 
 Ze Blog is a safe space for you to explore the thoughts and experiences of fellow citizens of the internet, and share yours too.
@@ -90,8 +84,6 @@ Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austi
 
 ---
 <!-- Lessons from the Project -->
-<br />
-
 ## Lessons Learned
 
 Creating this blog helped me learn and practice:
@@ -110,8 +102,6 @@ Creating this blog helped me learn and practice:
 ---
 
 <!-- Sample Screenshot -->
-<br />
-
 ## Sample
 
 <br />
@@ -125,8 +115,6 @@ Creating this blog helped me learn and practice:
 ---
 
 <!-- License -->
-<br />
-
 ## License
 
 Distributed under the MIT License. See <a href="https://github.com/Ze-Austin/ze-blog/blob/main/LICENSE">LICENSE</a> for more information.
@@ -136,8 +124,6 @@ Distributed under the MIT License. See <a href="https://github.com/Ze-Austin/ze-
 ---
 
 <!-- Contact -->
-<br />
-
 ## Contact
 
 Dr Austin Wopara - [@Ze_Austin](https://twitter.com/Ze_Austin) - austinwopara@gmail.com
@@ -149,8 +135,6 @@ Project Link: [Ze Blog](https://github.com/Ze-Austin/ze-blog)
 ---
 
 <!-- Acknowledgements -->
-<br />
-
 ## Acknowledgements
 
 This project was made possible by:
