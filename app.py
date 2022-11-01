@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, flash, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, logout_user, login_required, LoginManager, UserMixin
@@ -55,6 +55,15 @@ class Message(db.Model):
     def __repr__(self):
         return f"Message: <{self.title}>"
 
+"""
+To clear the messages db table via the terminal:
+
+    python3
+    from app import db, Message
+    Message.__table__.drop(db.engine)
+    exit()
+"""
+
 @app.before_first_request
 def create_tables():
     db.create_all()
@@ -88,7 +97,8 @@ def contact():
         db.session.add(new_message)
         db.session.commit()
 
-        return redirect(url_for('contact'))
+        flash("Message sent. Thanks for reaching out!")
+        return redirect(url_for('index'))
 
     return render_template('contact.html')
 
@@ -101,12 +111,14 @@ def register():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        user = User.query.filter_by(username=username).first()
-        if user:
+        username_exists = User.query.filter_by(username=username).first()
+        if username_exists:
+            flash("This username already exists.")
             return redirect(url_for('register'))
 
         email_exists = User.query.filter_by(email=email).first()
         if email_exists:
+            flash("This email is already registered.")
             return redirect(url_for('register'))
 
         password_hash = generate_password_hash(password)
@@ -115,6 +127,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         
+        flash("You are now signed up.")
         return redirect(url_for('login'))
 
     return render_template('signup.html')
@@ -128,6 +141,7 @@ def login():
 
     if user and check_password_hash(user.password_hash, password):
         login_user(user)
+        flash("You are now logged in.")
         return redirect(url_for('index'))
 
     return render_template('login.html')
@@ -135,6 +149,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash("You have been logged out.")
     return redirect(url_for('index'))
 
 @app.route('/contribute', methods=['GET', 'POST'])
@@ -142,18 +157,20 @@ def logout():
 def contribute():
     if request.method == 'POST':
         title = request.form.get('title')
-        content = request.form.get("content")
-        user_id = request.form.get('user_id')
-        author = request.form.get('author')
+        content = request.form.get('content')
+        user_id = current_user.id
+        author = current_user.username
 
         title_exists = Article.query.filter_by(title=title).first()
         if title_exists:
+            flash("This article already exists. Please choose a new title.")
             return redirect(url_for('contribute'))
 
         new_article = Article(title=title, content=content, user_id=user_id, author=author)
         db.session.add(new_article)
         db.session.commit()
 
+        flash("Thanks for sharing your thoughts. Fancy posting another?")
         return redirect(url_for('contribute'))
         
     return render_template('contribute.html')
@@ -179,6 +196,7 @@ def edit(id):
             article_to_edit.content = request.form.get('content')
 
             db.session.commit()
+            flash("Your changes have been saved.")
             return redirect(url_for('index'))
 
         context = {
@@ -200,6 +218,7 @@ def delete(id):
     if current_user.username == article_to_delete.author:
         db.session.delete(article_to_delete)
         db.session.commit()
+        flash("That article is gone!")
         return redirect(url_for('index'))
     
     context = {
