@@ -27,23 +27,5 @@
   <div class="form-group">
     <input type="submit" value="Post Article" class="button" />
   </div>
-  <div class="form-group" hidden>
-    <label for="user_id">Author's ID</label>
-    <input
-      type="text"
-      name="user_id"
-      class="form-control"
-      value="{{current_user.id}}"
-    />
-  </div>
-  <div class="form-group" hidden>
-    <label for="author">Author's Username</label>
-    <input
-      type="text"
-      name="author"
-      class="form-control"
-      value="{{current_user.username}}"
-    />
-  </div>
 </form>
 {% endblock content %}
