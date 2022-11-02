@@ -139,12 +139,12 @@ Project Link: [Ze Blog](https://github.com/Ze-Austin/ze-blog)
 
 This project was made possible by:
 
-* [AltSchool Africa](https://altschoolafrica.com/schools/engineering)
-* [Caleb Emelike](https://github.com/CalebEmelike)
+* [AltSchool Africa School of Engineering](https://altschoolafrica.com/schools/engineering)
+* [Caleb Emelike's Flask Lessons](https://github.com/CalebEmelike)
 * [AltSchool Python Repo](https://github.com/Ze-Austin/altschool-python)
 * [GitHub Student Pack](https://education.github.com/globalcampus/student)
 * [NameCheap Logo Maker](https://www.namecheap.com/logo-maker/)
-* [README Template](https://github.com/othneildrew/Best-README-Template)
+* [Othneil Drew's README Template](https://github.com/othneildrew/Best-README-Template)
 * [Stack Overflow](https://stackoverflow.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
