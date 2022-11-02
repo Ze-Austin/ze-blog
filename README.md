@@ -145,6 +145,7 @@ This project was made possible by:
 * [GitHub Student Pack](https://education.github.com/globalcampus/student)
 * [NameCheap Logo Maker](https://www.namecheap.com/logo-maker/)
 * [Othneil Drew's README Template](https://github.com/othneildrew/Best-README-Template)
+* [Ileriayo's Markdown Badges](https://github.com/Ileriayo/markdown-badges)
 * [Stack Overflow](https://stackoverflow.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
