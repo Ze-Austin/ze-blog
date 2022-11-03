@@ -9,13 +9,15 @@ base_dir = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(base_dir, 'ze_blog.db')
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + \
+    os.path.join(base_dir, 'ze_blog.db')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = 'dcabc46275bceb98bf55e21c'
 
 db = SQLAlchemy(app)
 db.init_app(app)
 login_manager = LoginManager(app)
+
 
 class User(db.Model, UserMixin):
     __tablename__ = "users"
@@ -25,10 +27,12 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(80), nullable=False, unique=True)
     password_hash = db.Column(db.Text, nullable=False)
-    articles_by = db.relationship("Article", back_populates="created_by", lazy="dynamic")
+    articles_by = db.relationship(
+        "Article", back_populates="created_by", lazy="dynamic")
 
     def __repr__(self):
         return f"User: <{self.username}>"
+
 
 class Article(db.Model):
     __tablename__ = "articles"
@@ -36,12 +40,14 @@ class Article(db.Model):
     title = db.Column(db.String(80), nullable=False)
     content = db.Column(db.String, nullable=False)
     created_on = db.Column(db.DateTime, default=datetime.now())
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), unique=False, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(
+        "users.id"), unique=False, nullable=False)
     author = db.Column(db.String, nullable=False)
     created_by = db.relationship("User", back_populates="articles_by")
 
     def __repr__(self):
         return f"Article: <{self.title}>"
+
 
 class Message(db.Model):
     __tablename__ = "messages"
@@ -55,6 +61,7 @@ class Message(db.Model):
     def __repr__(self):
         return f"Message: <{self.title}>"
 
+
 """
 To clear the messages db table via the terminal:
 
@@ -64,25 +71,30 @@ To clear the messages db table via the terminal:
     exit()
 """
 
+
 @app.before_first_request
 def create_tables():
     db.create_all()
+
 
 @login_manager.user_loader
 def user_loader(id):
     return User.query.get(int(id))
 
+
 @app.route('/')
 def index():
     articles = Article.query.all()
     context = {
-        "articles":articles
+        "articles": articles
     }
     return render_template('index.html', **context)
+
 
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -93,7 +105,8 @@ def contact():
         message = request.form.get('message')
         priority = request.form.get('priority')
 
-        new_message = Message(sender=sender, email=email, title=title, message=message, priority=priority)
+        new_message = Message(sender=sender, email=email,
+                              title=title, message=message, priority=priority)
         db.session.add(new_message)
         db.session.commit()
 
@@ -101,6 +114,7 @@ def contact():
         return redirect(url_for('index'))
 
     return render_template('contact.html')
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def register():
@@ -123,14 +137,16 @@ def register():
 
         password_hash = generate_password_hash(password)
 
-        new_user = User(username=username, first_name=first_name, last_name=last_name, email=email, password_hash=password_hash)
+        new_user = User(username=username, first_name=first_name,
+                        last_name=last_name, email=email, password_hash=password_hash)
         db.session.add(new_user)
         db.session.commit()
-        
+
         flash("You are now signed up.")
         return redirect(url_for('login'))
 
     return render_template('signup.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -146,11 +162,13 @@ def login():
 
     return render_template('login.html')
 
+
 @app.route('/logout')
 def logout():
     logout_user()
     flash("You have been logged out.")
     return redirect(url_for('index'))
+
 
 @app.route('/contribute', methods=['GET', 'POST'])
 @login_required
@@ -166,14 +184,16 @@ def contribute():
             flash("This article already exists. Please choose a new title.")
             return redirect(url_for('contribute'))
 
-        new_article = Article(title=title, content=content, user_id=user_id, author=author)
+        new_article = Article(title=title, content=content,
+                              user_id=user_id, author=author)
         db.session.add(new_article)
         db.session.commit()
 
         flash("Thanks for sharing your thoughts. Fancy posting another?")
         return redirect(url_for('contribute'))
-        
+
     return render_template('contribute.html')
+
 
 @app.route('/article/<int:id>/')
 def article(id):
@@ -185,11 +205,12 @@ def article(id):
 
     return render_template('article.html', **context)
 
+
 @app.route('/edit/<int:id>/', methods=['GET', 'POST'])
 @login_required
 def edit(id):
     article_to_edit = Article.query.get_or_404(id)
-    
+
     if current_user.username == article_to_edit.author:
         if request.method == 'POST':
             article_to_edit.title = request.form.get('title')
@@ -205,10 +226,9 @@ def edit(id):
 
         return render_template('edit.html', **context)
 
-    context = {
-        'article': article_to_edit
-    }
-    return render_template('article.html', **context)
+    flash("You cannot edit another user's article.")
+    return redirect(url_for('index'))
+
 
 @app.route('/delete/<int:id>/', methods=['GET'])
 @login_required
@@ -220,8 +240,6 @@ def delete(id):
         db.session.commit()
         flash("That article is gone!")
         return redirect(url_for('index'))
-    
-    context = {
-        'article': article_to_delete
-    }
-    return render_template('article.html', **context)
+
+    flash("You cannot delete another user's article.")
+    return redirect(url_for('index'))
