@@ -53,7 +53,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+  <p align="right"><a href="#readme-top">back to top</a></p>
 </details>
 
 ---
@@ -67,7 +67,7 @@ Authentication is not required to read articles on this blog, but you'll have lo
 
 Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austin">Ze Austin</a>, a Backend Engineering student at <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a> who's learning to create magic with the Python Flask framework. 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Built With:
 
@@ -78,7 +78,7 @@ Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austi
 ![CSS3][css3]
 ![SQLite][sqlite]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 <!-- Lessons from the Project -->
@@ -95,7 +95,7 @@ Creating this blog helped me learn and practice:
 * Flash Messaging
 * Documentation
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -108,7 +108,7 @@ Creating this blog helped me learn and practice:
 
 <br/>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -117,7 +117,7 @@ Creating this blog helped me learn and practice:
 
 Distributed under the MIT License. See <a href="https://github.com/Ze-Austin/ze-blog/blob/main/LICENSE">LICENSE</a> for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -128,7 +128,7 @@ Dr Austin Wopara - [@Ze_Austin](https://twitter.com/Ze_Austin) - austinwopara@gm
 
 Project Link: [Ze Blog](https://github.com/Ze-Austin/ze-blog)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
@@ -146,7 +146,7 @@ This project was made possible by:
 * [Ileriayo's Markdown Badges](https://github.com/Ileriayo/markdown-badges)
 * [Stack Overflow](https://stackoverflow.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
