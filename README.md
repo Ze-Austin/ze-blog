@@ -18,9 +18,11 @@
   <a href="https://github.com/Ze-Austin/ze-blog">
     <img src="static/Ze_Blog_logo/site.png" alt="Logo" width="90%" height="30%">
   </a>
+</div>
 
-  <br />
+<br />
 
+<div>
   <p align="center">
     <a href="https://github.com/Ze-Austin/ze-blog#readme"><strong>Explore the docs »</strong></a>
     <br />
