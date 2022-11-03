@@ -1,7 +1,6 @@
 <!-- Back to Top Navigation Anchor -->
 <a name="readme-top"></a>
 
-
 <!-- Project Shields -->
 <div align="center">
 
@@ -12,7 +11,6 @@
   [![MIT License][license-shield]][license-url]
   [![Twitter][twitter-shield]][twitter-url]
 </div>
-
 
 <!-- Project Logo -->
 <br />
