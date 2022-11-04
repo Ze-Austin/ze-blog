@@ -141,7 +141,7 @@ This project was made possible by:
 
 * [AltSchool Africa School of Engineering](https://altschoolafrica.com/schools/engineering)
 * [Caleb Emelike's Flask Lessons](https://github.com/CalebEmelike)
-* [AltSchool Python Repo](https://github.com/Ze-Austin/altschool-python)
+* [My AltSchool Python Repo](https://github.com/Ze-Austin/altschool-python)
 * [GitHub Student Pack](https://education.github.com/globalcampus/student)
 * [NameCheap Logo Maker](https://www.namecheap.com/logo-maker/)
 * [Othneil Drew's README Template](https://github.com/othneildrew/Best-README-Template)
