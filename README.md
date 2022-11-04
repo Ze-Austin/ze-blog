@@ -50,6 +50,13 @@
     <li>
       <a href="#lessons-learned">Lessons Learned</a>
     </li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>    
     <li><a href="#sample">Sample</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -96,6 +103,40 @@ Creating this blog helped me learn and practice:
 * User Authorization
 * Flash Messaging
 * Documentation
+
+<p align="right"><a href="#readme-top">back to top</a></p>
+
+---
+
+<!-- GETTING STARTED -->
+## Usage
+
+To get a local copy up and running, follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* Python3: [Get Python](https://www.python.org/downloads/)
+
+### Installation
+
+1. Clone this repo
+   ```sh
+   git clone https://github.com/Ze-Austin/ze-blog.git
+   ```
+2. Activate the virtual environment
+   ```sh
+   source env/bin/activate
+   ```
+3. Install project packages
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. Run Flask
+   ```sh
+   flask run
+   ```
+5. Open the link generated in the terminal on a browser
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
