@@ -1,3 +1,4 @@
+# Imports: load the source packages with `pip install -r requirements.txt`
 from flask import Flask, flash, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -5,6 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required, L
 from datetime import datetime
 import os
 
+# Configurations: base directory, app, db & login manager
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
@@ -16,9 +18,15 @@ app.config["SECRET_KEY"] = 'dcabc46275bceb98bf55e21c'
 
 db = SQLAlchemy(app)
 db.init_app(app)
+
 login_manager = LoginManager(app)
 
 
+# Database Table Classes
+
+# User Model: creates a table of users using UserMixin,
+# and links each user to their articles in the table,
+# then returns the username as its representation
 class User(db.Model, UserMixin):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
@@ -34,6 +42,9 @@ class User(db.Model, UserMixin):
         return f"User: <{self.username}>"
 
 
+# Article Model: creates a table of articles,
+# and links each article to its author in the table,
+# then returns the title as its representation
 class Article(db.Model):
     __tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True)
@@ -49,6 +60,8 @@ class Article(db.Model):
         return f"Article: <{self.title}>"
 
 
+# Message Model: creates a table of messages from visitors,
+# then returns the message title as its representation
 class Message(db.Model):
     __tablename__ = "messages"
     id = db.Column(db.Integer, primary_key=True)
@@ -62,6 +75,7 @@ class Message(db.Model):
         return f"Message: <{self.title}>"
 
 
+# Personal reminder for Ze Austin
 """
 To clear the messages db table via the terminal:
 
@@ -72,16 +86,21 @@ To clear the messages db table via the terminal:
 """
 
 
+# Initialize db tables on first run
 @app.before_first_request
 def create_tables():
     db.create_all()
 
 
+# Assign current user to Login Manager
 @login_manager.user_loader
 def user_loader(id):
     return User.query.get(int(id))
 
 
+# Routing
+
+# Home: displays all articles using the index template
 @app.route('/')
 def index():
     articles = Article.query.all()
@@ -91,11 +110,14 @@ def index():
     return render_template('index.html', **context)
 
 
+# About: introduces the blog using the about template
 @app.route('/about')
 def about():
     return render_template('about.html')
 
 
+# Contact: enables feedback using the contact template,
+# then redirects to homepage after sending a message
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -116,6 +138,9 @@ def contact():
     return render_template('contact.html')
 
 
+# Sign Up: registers a new user and hashes their password,
+# but flashes errors and reloads the page if data exists,
+# then redirects to login page if successfully registered
 @app.route('/signup', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -148,6 +173,9 @@ def register():
     return render_template('signup.html')
 
 
+# Log In: logs the user in by checking their hashed password,
+# but flashes an error and reloads the page if data is invalid,
+# then redirects to home page if successfully logged in
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     username = request.form.get('username')
@@ -159,10 +187,14 @@ def login():
         login_user(user)
         flash("You are now logged in.")
         return redirect(url_for('index'))
+    if (user and check_password_hash(user.password_hash, password)) == False:
+        flash("Please provide valid credentials.")
+        return redirect(url_for('login'))
 
     return render_template('login.html')
 
 
+# Log Out: Login Manager makes this simple and short :)
 @app.route('/logout')
 def logout():
     logout_user()
@@ -170,6 +202,21 @@ def logout():
     return redirect(url_for('index'))
 
 
+# Article: loads the selected article from the homepage
+@app.route('/article/<int:id>/')
+def article(id):
+    article = Article.query.get_or_404(id)
+
+    context = {
+        "article": article
+    }
+
+    return render_template('article.html', **context)
+
+
+# Contribute: enables article creation by logged in users only,
+# but flashes an error and reloads the page if article title exists,
+# then reloads page if successfully posted, encouraging another post
 @app.route('/contribute', methods=['GET', 'POST'])
 @login_required
 def contribute():
@@ -189,23 +236,15 @@ def contribute():
         db.session.add(new_article)
         db.session.commit()
 
-        flash("Thanks for sharing your thoughts. Fancy posting another?")
-        return redirect(url_for('contribute'))
+        flash("Thanks for sharing your thoughts.")
+        return redirect(url_for('index'))
 
     return render_template('contribute.html')
 
 
-@app.route('/article/<int:id>/')
-def article(id):
-    article = Article.query.get_or_404(id)
-
-    context = {
-        "article": article
-    }
-
-    return render_template('article.html', **context)
-
-
+# Edit: enables article updates by chosen article's author only,
+# then redirects to the article if it's been successfully edited,
+# but flashes an error and redirects home if user's unauthorised
 @app.route('/edit/<int:id>/', methods=['GET', 'POST'])
 @login_required
 def edit(id):
@@ -217,8 +256,9 @@ def edit(id):
             article_to_edit.content = request.form.get('content')
 
             db.session.commit()
+
             flash("Your changes have been saved.")
-            return redirect(url_for('index'))
+            return redirect(url_for('article', id=article_to_edit.id))
 
         context = {
             'article': article_to_edit
@@ -230,6 +270,9 @@ def edit(id):
     return redirect(url_for('index'))
 
 
+# Delete: enables article removal by chosen article's author only,
+# then redirects home if the article is successfully deleted,
+# but flashes an error and redirects home if user's unauthorised
 @app.route('/delete/<int:id>/', methods=['GET'])
 @login_required
 def delete(id):
