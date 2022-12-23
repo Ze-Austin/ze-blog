@@ -1,0 +1,5 @@
+env
+__pycache__
+ze_blog.db
+*pyc
+.DS_Store
