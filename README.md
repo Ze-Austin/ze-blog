@@ -135,7 +135,7 @@ Python3: [Get Python](https://www.python.org/downloads/)
    ```sh
    flask run
    ```
-5. Open the link generated in the terminal on a browser
+5. Open the link generated in the terminal on a browser  
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
