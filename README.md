@@ -94,7 +94,7 @@ Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austi
 ## Lessons Learned
 
 Creating this blog helped me learn and practice:
-* Web Design
+* Responsive Web Design
 * Debugging
 * Routing
 * Database Management
