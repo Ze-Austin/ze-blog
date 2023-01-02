@@ -101,7 +101,7 @@ Creating this blog helped me learn and practice:
 * Internet Security
 * User Authentication
 * User Authorization
-* Flash Messaging
+* Message Flashing
 * Documentation
 
 <p align="right"><a href="#readme-top">back to top</a></p>
