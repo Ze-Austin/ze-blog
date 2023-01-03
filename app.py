@@ -35,8 +35,6 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(80), nullable=False, unique=True)
     password_hash = db.Column(db.Text, nullable=False)
-    articles_by = db.relationship(
-        "Article", back_populates="created_by", lazy="dynamic")
 
     def __repr__(self):
         return f"User: <{self.username}>"
@@ -54,7 +52,6 @@ class Article(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(
         "users.id"), unique=False, nullable=False)
     author = db.Column(db.String, nullable=False)
-    created_by = db.relationship("User", back_populates="articles_by")
 
     def __repr__(self):
         return f"Article: <{self.title}>"
