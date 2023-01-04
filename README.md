@@ -74,7 +74,9 @@ Ze Blog is a safe space for you to explore the thoughts and experiences of fello
 
 Authentication is not required to read articles on this blog, but you'll have log in to post, edit or delete your articles.
 
-Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austin">Ze Austin</a>, a Backend Engineering student at <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a> who's learning to create magic with the Python Flask framework. 
+Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austin">Ze Austin</a>, a Backend Engineering student at <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a> who's learning to create magic with the Python Flask framework.
+
+A tutorial on how this project was built is available on Hashnode in [Austin's Space](https://ze-austin.hashnode.dev/flask-blog-project).
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
