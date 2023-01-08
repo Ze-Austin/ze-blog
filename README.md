@@ -76,7 +76,7 @@ Authentication is not required to read articles on this blog, but you'll have lo
 
 Ze Blog was built as an exam project by <a href="https://www.github.com/Ze-Austin">Ze Austin</a>, a Backend Engineering student at <a href="https://altschoolafrica.com/schools/engineering">AltSchool Africa</a> who's learning to create magic with the Python Flask framework.
 
-A tutorial on how this project was built is available on Hashnode in [Austin's Space](https://ze-austin.hashnode.dev/flask-blog-project).
+A tutorial on how this project was built is available in [Austin's Space](https://ze-austin.hashnode.dev/flask-blog-project) on Hashnode.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
